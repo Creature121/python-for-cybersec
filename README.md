@@ -4,3 +4,4 @@ This repository contains the various notes and scripts I write based on the book
 
 # Remarks
 - I will be using the UV package manager, instead of pip, thus with all its respective changes.
+    - You can download it here: https://docs.astral.sh/uv/getting-started/installation/
