@@ -1,0 +1,19 @@
+- MITRE Pre-ATT&CK consists of:
+    - Reconnaissance
+    - Resource Development
+- Chapter 1 will focus on Reconnaissance rather than Resource Development.
+    - I think it is because it is easier to show good examples in Reconnaissance.
+---
+- Reconnaissance:
+    - Active
+        - Nmap is the most common tool
+        - We implement SYN and DNS scans in Python using `scappy`.
+            - [PortScan.py](PortScan.py)
+            - [HoneyScan.py](HoneyScan.py)
+    - Passive
+        - Search Open Technical Databases Technique
+            - DNS
+                
+---
+- scapy lib
+- Berkeley Packet Filter (BPF) syntax
