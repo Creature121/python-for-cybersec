@@ -19,3 +19,4 @@
 - scapy lib
 - Berkeley Packet Filter (BPF) syntax
 - SYN, DNS, ACK, XMAS scans
+- Multithreading
