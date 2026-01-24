@@ -13,7 +13,9 @@
     - Passive
         - Search Open Technical Databases Technique
             - DNS
-                
+                - [DNSExploration.py](DNSExploration.py)
+                - [HoneyResolver.py](HoneyResolver.py)
 ---
 - scapy lib
 - Berkeley Packet Filter (BPF) syntax
+- SYN, DNS, ACK, XMAS scans

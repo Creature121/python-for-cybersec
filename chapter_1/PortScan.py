@@ -16,8 +16,8 @@ def SynScan(host):
     print(f"Open ports at {host}:")
     for sent_packet, received_packet in answered:
         if (
-            sent_packet[TCP].dport == received_packet["TCP"].sport
-            and received_packet["TCP"].flags == "SA"
+            sent_packet[TCP].dport == received_packet[TCP].sport
+            and received_packet[TCP].flags == "SA"
         ):
             print(sent_packet[TCP].dport)
 
