@@ -1,6 +1,13 @@
 - Chapter 3 focuses on the "Execution" phase of the MITRE ATT&CK framework.
     - focusing on 2 techniques:
         - Scheduled Task/Job
+            - allows an attacker achieve code execution,
+                - as well as complicate forensics by breaking up the attack chain
+            - Task scheduling in...
+                - Windows: `schtasks` program
+                - *nix: `cron` program
+            - [TaskScheduler.py](TaskScheduler.py)
+            - [ScheduleTracker.py](ScheduleTracker.py)
         - Windows Management Instrumentation (WMI)
             - [WMIExecution.py](WMIExecution.py)
             - [WMIDetection.py](WMIDetection.py)
@@ -16,5 +23,9 @@
 ---
 - Windows Management Instrumentation (WMI)
     - looks like it can run without admin? Will need to test it out more.
-- xml package
+- `xml` package
     - looks like a neat package to parse xml...
+- Using task scheduling to run payloads
+- `pathlib`
+    - Feels like this make it much easier handling paths, rather than through `os`
+    - `shelex` package made parsing certain things easy, look more into this.

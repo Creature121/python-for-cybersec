@@ -3,6 +3,7 @@ from win32api import GetLogicalDriveStrings
 from win32file import GetDriveType
 import os.path
 import psutil
+import datetime
 
 
 def GetRemovableDrives():
@@ -32,7 +33,7 @@ def DetectAutorunProcess(executable):
             print("Autorun file running.")
             print("Details:")
             print(f"PID: {process.pid}")
-            print(f"Creation Time: {process.create_time}")  # Process's creation time
+            print(f"Creation Time: {datetime.datetime._fromtimestamp(process.create_time())}")  # Process's creation time
             print(
                 f"Parent PID: {process.parent().pid}"
             )  # Process's parent process's pid.

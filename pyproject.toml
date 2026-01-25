@@ -86,3 +86,8 @@ dependencies = [
     "wcwidth==0.2.5",
     "wmi==1.5.1",
 ]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
