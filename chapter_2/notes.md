@@ -1,0 +1,12 @@
+- Chapter 2 is concerned about the "Initial Access" phase of the MITRE ATT&CK framework.
+    - We will be working with 2 techniques:
+        - Valid Accounts
+            - Attempts to take advantage of default accounts
+                - [TestDefaultCredentials.py](TestDefaultCredentials.py)
+
+        - Replication Through Removable Media
+---
+- paramiko
+    - low-level SSH handling library
+- telnetlib
+    - Telnet handling library
