@@ -13,6 +13,7 @@
             - > When a user inserts removable media into a drive, it is possible for malicious content on the media to run on their computer.
             - Exploiting Autorun
                 - [AutorunSetup.py](AutorunSetup.py)
+            - [AutorunDetection.py](AutorunDetection.py)
 ---
 ---
 # Windows Logon Types

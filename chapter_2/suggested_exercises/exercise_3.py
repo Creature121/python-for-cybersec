@@ -32,8 +32,10 @@ def DetectAutorunProcess(executable):
             print("Autorun file running.")
             print("Details:")
             print(f"PID: {process.pid}")
-            print(f"Creation Time: {process.create_time}") # Process's creation time
-            print(f"Parent PID: {process.parent().pid}") # Process's parent process's pid.
+            print(f"Creation Time: {process.create_time}")  # Process's creation time
+            print(
+                f"Parent PID: {process.parent().pid}"
+            )  # Process's parent process's pid.
 
 
 for drive in GetRemovableDrives():

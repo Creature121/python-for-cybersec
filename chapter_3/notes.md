@@ -1,0 +1,20 @@
+- Chapter 3 focuses on the "Execution" phase of the MITRE ATT&CK framework.
+    - focusing on 2 techniques:
+        - Scheduled Task/Job
+        - Windows Management Instrumentation (WMI)
+            - [WMIExecution.py](WMIExecution.py)
+            - [WMIDetection.py](WMIDetection.py)
+---
+---
+- Admins use WMI to manage local/remote machines, via:
+    - Server Message Block (SMB)
+    - Remote Procedure Call Service (RPCS) 
+- But attackers can also use WMI to:
+    - achieve code execution
+    - perform reconnaissance and other tasks.
+---
+---
+- Windows Management Instrumentation (WMI)
+    - looks like it can run without admin? Will need to test it out more.
+- xml package
+    - looks like a neat package to parse xml...
