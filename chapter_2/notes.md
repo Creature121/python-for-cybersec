@@ -7,8 +7,12 @@
                 - [ValidAccountDetection.py](ValidAccountDetection.py)
                     - Uses Windows Event Logs to detect failed login attempts.
                     - Checks for unauthorized access to default accounts.
+            - > ...potentially vulnerable to detection and prevention by network-based security solutions.
 
         - Replication Through Removable Media
+            - > When a user inserts removable media into a drive, it is possible for malicious content on the media to run on their computer.
+            - Exploiting Autorun
+                - [AutorunSetup.py](AutorunSetup.py)
 ---
 ---
 # Windows Logon Types
@@ -28,6 +32,11 @@
 | 13 | CachedUnlock | Workstation logon |
 ---
 ---
+- Downloaded from author's site:
+    - [defaults.txt](defaults.txt)
+    - [allowlist.txt](allowlist.txt)
+    - [malicious.py](malicious.py)
+    - [Firefox.ico](Firefox.ico)
 - paramiko
     - low-level SSH handling library
 - telnetlib
@@ -36,4 +45,8 @@
     - Event Codes
     - Logon Types
     - The values in the `EventData` field are called `StringInserts` in Python
-- downloaded [defaults.txt](defaults.txt) and [allowlist.txt](allowlist.txt) from author's site.
+- pyinstaller
+    - packages Python scripts into exe
+- shutil
+    - copying/moving/archiving files
+
