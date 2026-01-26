@@ -7,6 +7,12 @@
         - [LogonScript.py](LogonScript.py)
         - [DetectLogonScript.py](DetectLogonScript.py)
     - Hijack Execution Flow (same as chapter 4)
+        - > ...far too often, applications are granted far more access and power than they need.
+            - This can be used by attackers looking to escalate privileges.
+                - > Python libraries can also be a source of risk to an application.
+                    - [win32evtlog.py](win32evtlog.py)
+                    - [PythonLibraryMismatch.py](PythonLibraryMismatch.py)
 ---
 ---
+- Downloaded [test.py](test.py) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
 - Logon Scripts for lateral privilege escalation.
