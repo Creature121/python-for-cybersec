@@ -1,0 +1,12 @@
+- Chapter 5 focuses on the "Privilege Escalation" phase of the MITRE ATT&CK framework.
+- We will be covering 2 techniques:
+    - Boot or Logon Escalation Scripts
+        - > ...Autorun keys in the Windows Registry are not the only way to ensure that code is run upon boot or user login. Windows and Linux both also support logon scripts, which provide near-identical functionality but are set up in slightly different ways.
+            - Logon scripts are also stored in the Registry
+                - They are only triggered by user login events.
+        - [LogonScript.py](LogonScript.py)
+        - [DetectLogonScript.py](DetectLogonScript.py)
+    - Hijack Execution Flow (same as chapter 4)
+---
+---
+- Logon Scripts for lateral privilege escalation.
