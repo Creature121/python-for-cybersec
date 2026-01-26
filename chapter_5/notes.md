@@ -16,3 +16,4 @@
 ---
 - Downloaded [test.py](test.py) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
 - Logon Scripts for lateral privilege escalation.
+- Hijacking Python libraries, since Python is really powerful.
