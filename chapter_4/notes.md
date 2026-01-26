@@ -2,9 +2,15 @@
 - We will be covering 2 techniques:
     - Boot or Logon Autostart Execution
         - OSs allow users to define their own scripts that run on boot/user logon.
-        - [RegAutorun.py](RegAutorun.py)
         - Under HKEY_USERS, you can get access to other users
             - through their Windows Security Identifier (SID)
+        - [RegAutorun.py](RegAutorun.py)
+        - [DetectRegistryAutorun.py](DetectRegistryAutorun.py)
+        - > A call to QueryInfoKey returns an array of three values:
+                ■ The number of subkeys that the key has
+                ■ The number of values that the key has
+                ■ The time that the key was last modified in hundreds of nanoseconds since
+January 1, 1601
     - Hijack Execution Flow
 ---
 ---
