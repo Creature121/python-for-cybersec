@@ -1073,6 +1073,7 @@ dependencies = [
     { name = "urllib3" },
     { name = "wasabi" },
     { name = "wcwidth" },
+    { name = "winfiletime" },
     { name = "wmi" },
 ]
 
@@ -1162,6 +1163,7 @@ requires-dist = [
     { name = "urllib3", specifier = "==1.26.6" },
     { name = "wasabi", specifier = "==0.8.2" },
     { name = "wcwidth", specifier = "==0.2.5" },
+    { name = "winfiletime", specifier = ">=2.1" },
     { name = "wmi", specifier = "==1.5.1" },
 ]
 
@@ -1552,6 +1554,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/89/38/459b727c381504f361832b9e5ace19966de1a235d73cdbdea91c771a1155/wcwidth-0.2.5.tar.gz", hash = "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83", size = 34755, upload-time = "2020-06-23T16:10:29.829Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/59/7c/e39aca596badaf1b78e8f547c807b04dae603a433d3e7a7e04d67f2ef3e5/wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784", size = 30763, upload-time = "2020-06-23T16:10:28.529Z" },
+]
+
+[[package]]
+name = "winfiletime"
+version = "2.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/36/81/4952ed05c5635060cf9c750199da44420657aa1a4c45901128fb82db31e7/winfiletime-2.1.tar.gz", hash = "sha256:0fc30bd3ac05bff0894f9a07a4cf66247423203599bca276a9d53c450d0ceb29", size = 4187, upload-time = "2025-05-23T20:15:51.382Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/05/ef/2c82f51f1f48a847a1c0c57980b0ccad643f610f0a3bd328d41d2d88af58/winfiletime-2.1-py3-none-any.whl", hash = "sha256:81078a64f6ea3b3a9aa17e3a7d0806ad19d1f87b125935f94dab93172686b83d", size = 5051, upload-time = "2025-05-23T20:15:50.044Z" },
 ]
 
 [[package]]

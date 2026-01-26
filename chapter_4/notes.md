@@ -12,6 +12,13 @@
                 ■ The time that the key was last modified in hundreds of nanoseconds since
 January 1, 1601
     - Hijack Execution Flow
+        - ...of legitimate processes.
+            - ...by replacing legitimate appliactions/libraries with malicious ones.
+        - [ChangePath.py](ChangePath.py)
+        - [DetectPathModificationRegistry.py](DetectPathModificationRegistry.py)
+        - You can enable auditing of specific Registry keys to track an changes to them.
+            - Which you need some sort of policy editor, which is not available on Windows Home editions...
+            - [DetectPathModificationEvent.py](DetectPathModificationEvent.py)
 ---
 ---
 - Downloaded from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section):
@@ -20,4 +27,9 @@ January 1, 1601
     - [malicious.py](payload/malicious.py)
     - Very similar to the stuff we needed in chapter 2.
 - Use the Windows Registry to enable persistence through Autorun.
+    - `QueryInfoKey()` & `EnumValue()`
 - `pathlib` package can be *really* useful in path related stuff.
+- Replaced `filetime` with `winfiletime` package.
+    - `filetime` was giving a `ModuleNotFoundError: No module named 'nt_setctime'` error.
+        - Most possibly because I am using a non-native Python interpreter.
+            - (I am using one that is managed by uv.)
