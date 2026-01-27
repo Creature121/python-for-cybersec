@@ -10,6 +10,7 @@ This repository contains the various notes and scripts I write based on the book
 - [Chapter 4 Notes](chapter_4/notes.md)
 - [Chapter 5 Notes](chapter_5/notes.md)
 - [Chapter 6 Notes](chapter_6/notes.md)
+- [Chapter 7 Notes](chapter_7/notes.md)
 
 # Remarks
 - I will be using the UV package manager, instead of pip, thus with all its respective changes.

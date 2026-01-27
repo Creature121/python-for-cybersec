@@ -1,0 +1,8 @@
+- Chapter 7 focuses on the "Accessing Credentials" phase of the MITRE ATT&CK framework.
+    - We will bw using 2 techniques:
+        - Credentials from Password Stores
+            - > To provide a seamless experience, these passwords (saved on the webbrowser  ) are commonly protected with the user’s Windows password and the built-in cryptography of the underlying OS.
+            - [ChromeDump.py](ChromeDump.py)
+                - Since Chromes password store was encrypted with the Window's login key, instead of cracking it, we basically ask Windows to decrypt it for us.
+                - Unable to decode final plain-text (utf-8 error), unsure why...
+        - Network Sniffing
