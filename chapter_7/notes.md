@@ -8,3 +8,11 @@
             - [DetectLocalStateAccess.py](DetectLocalStateAccess.py)
                 - It seems to be accessing everything it needs to, but the [ChromeDump.py](ChromeDump.py) simply isn't creating any logs...perhaps the accesses it makes aren't creating logs?
         - Network Sniffing
+            - Credentials may be visible in network traffic of systems with weaker security.
+            - `scapy` can be used for network traffic analysis.
+            - [NetworkCredentialSniffing.py](NetworkCredentialSniffing.py)
+            - [DecoyCredentials.py](DecoyCredentials.py)
+---
+---
+- Downloaded [merged.pcap](merged.pcap) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
+- `ftplib`, `telnetlib`
