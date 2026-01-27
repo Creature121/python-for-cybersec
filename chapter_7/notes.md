@@ -5,4 +5,6 @@
             - [ChromeDump.py](ChromeDump.py)
                 - Since Chromes password store was encrypted with the Window's login key, instead of cracking it, we basically ask Windows to decrypt it for us.
                 - Unable to decode final plain-text (utf-8 error), unsure why...
+            - [DetectLocalStateAccess.py](DetectLocalStateAccess.py)
+                - It seems to be accessing everything it needs to, but the [ChromeDump.py](ChromeDump.py) simply isn't creating any logs...perhaps the accesses it makes aren't creating logs?
         - Network Sniffing
