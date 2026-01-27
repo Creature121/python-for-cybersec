@@ -1,4 +1,4 @@
-from scapy.all import Raw, IP, TCP, rdpcap  # ty:ignore[unresolved-import]
+from scapy.all import Raw, IP, TCP, rdpcap, UDP  # ty:ignore[unresolved-import]
 from base64 import b64decode
 import re
 
@@ -10,6 +10,27 @@ def ExtractFTP(packet):
         print(f"{packet[IP].dst} FTP Username: {payload[5:]}")
     elif payload[:4] == "PASS":
         print(f"{packet[IP].dst} FTP Password: {payload[5:]}")
+
+
+def ExtractNetBiosDetails(packet):
+    payload = bytes(packet[UDP].payload)
+    # print(payload)
+    # print(payload[0])
+
+    msg_type = payload[0]
+    flags = payload[1]
+    datagram_id = payload[2:4]
+    src_ip, dst_ip = packet[IP].src, packet[IP].dst
+    datagram_source_name = payload[14:48]
+    datagram_destination_name = payload[48:88]
+
+    print(f"NBD from  ({src_ip}) -> ({dst_ip})")
+    print(f"Datagram Source Name: {datagram_source_name}")
+    print(f"Datagram Destination Name: {datagram_destination_name}")
+    print(f"\tID: 0x{datagram_id.hex()}")
+    print(f"\tType: 0x{msg_type:02x}")
+    print(f"\tFlags: 0x{flags:02x}")
+    # print(f"\tFlags: 0x{flags:02x}")
 
 
 email_regex = "^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$"
@@ -63,13 +84,17 @@ def ExtractTelnet(packet):
             awaiting_password.remove(connection_data)
 
 
-packets = rdpcap("merged.pcap")
+packets = rdpcap("../merged.pcap")
 
 for packet in packets:
-    if packet.haslayer(TCP) and packet.haslayer(Raw):
-        if packet[TCP].dport == 21:
-            ExtractFTP(packet)
-        elif packet[TCP].dport == 25:
-            ExtractSMTP(packet)
-        elif packet[TCP].sport == 23 or packet.dport == 23:
-            ExtractTelnet(packet)
+    if packet.haslayer(Raw):
+        if packet.haslayer(TCP):
+            if packet[TCP].dport == 21:
+                ExtractFTP(packet)
+            elif packet[TCP].dport == 25:
+                ExtractSMTP(packet)
+            elif packet[TCP].sport == 23 or packet.dport == 23:
+                ExtractTelnet(packet)
+        elif packet.haslayer(UDP):
+            if 138 in (packet[UDP].sport, packet[UDP].dport):
+                ExtractNetBiosDetails(packet)

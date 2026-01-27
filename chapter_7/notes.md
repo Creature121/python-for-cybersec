@@ -16,3 +16,4 @@
 ---
 - Downloaded [merged.pcap](merged.pcap) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
 - `ftplib`, `telnetlib`
+- Come back to [exercise_2.py](suggested_exercises/exercise_2.py) to work on it properly.
