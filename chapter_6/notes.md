@@ -1,6 +1,15 @@
 - Chapter 6 focuses in the "Defense Evasion" phase of the MITRE ATT&CK framework.
     - Focusing on 2 techniques:
         - Hide Artifacts
+            - Hide Artifacts technique is passive Defense Evasion
+                - Attempts to conceal the attack from cybersecurity products.
+            - > Alternate data streams are a more effective means of hiding data on the Windows file system.
+                - Example: [benign.txt](benign.txt)
+            - [AlternateDataStreams.py](AlternateDataStreams.py)
+                - The last line that runs the `wmic` command fails to show the notepad windwow because of how Windows work.
+                    - WMIC (a service) runs in Session 0, user logins run in subsequent sessions.
+                        - Which basically means any process that has a UI created by WMIC can't be seen by any user.
+            -  [DetectADS.py](DetectADS.py)
         - Impair Defenses
             - > The Impair Defenses technique is an example of active Defense Evasion
             - Fully disabling anti-virus software requires:
@@ -26,3 +35,4 @@
 | 0x04 | Disabled | The service is disabled and should not be started. |
 ---
 ---
+- Alternate Data Streams
