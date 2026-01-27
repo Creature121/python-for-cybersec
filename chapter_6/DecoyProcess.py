@@ -4,7 +4,7 @@ This program fails to run on Windows.
 
 import signal
 import sys
-from setproctitle import setproctitle
+from setproctitle import setproctitle  # ty:ignore[unresolved-import]
 from time import sleep  # noqa: F401 #unused import?
 
 
@@ -16,7 +16,7 @@ decoy_name = "notepad"
 setproctitle(decoy_name)
 signal.signal(signal.SIGTERM, terminated)
 signal.signal(signal.SIGINT, terminated)
-signal_info = signal.sigwaitinfo({signal.SIGINT, signal.SIGTERM})
+signal_info = signal.sigwaitinfo({signal.SIGINT, signal.SIGTERM})  # ty:ignore[unresolved-attribute]
 
 with open("terinated.txt", "w+") as f:
     f.write(f"Process terminated by {signal_info.si_pid}\n")

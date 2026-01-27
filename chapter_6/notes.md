@@ -36,3 +36,7 @@
 ---
 ---
 - Alternate Data Streams
+- `subprocess` package
+- `watchfiles` package for a simple API to watch file changes
+    - Looks so much easier than `watchdog`.
+- Still need to work on [exercise_3.py](suggested_exercises/exercise_3.py).
