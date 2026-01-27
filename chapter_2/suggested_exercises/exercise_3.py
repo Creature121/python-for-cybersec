@@ -1,6 +1,6 @@
 import win32con
-from win32api import GetLogicalDriveStrings
-from win32file import GetDriveType
+from win32api import GetLogicalDriveStrings  # ty:ignore[unresolved-import]
+from win32file import GetDriveType  # ty:ignore[unresolved-import]
 import os.path
 import psutil
 import datetime
@@ -33,7 +33,7 @@ def DetectAutorunProcess(executable):
             print("Autorun file running.")
             print("Details:")
             print(f"PID: {process.pid}")
-            print(f"Creation Time: {datetime.datetime._fromtimestamp(process.create_time())}")  # Process's creation time
+            print(f"Creation Time: {datetime.datetime.fromtimestamp(process.create_time())}")  # Process's creation time
             print(
                 f"Parent PID: {process.parent().pid}"
             )  # Process's parent process's pid.

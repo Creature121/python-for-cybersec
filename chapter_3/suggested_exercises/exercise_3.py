@@ -52,7 +52,7 @@ for intermediate in results:
             print("========================================")
             print(exe_path)
             try:
-                print(f"Size {exe_path.stat().st_size}")
+                print(f"Size {exe_path.stat().st_size}")  # ty:ignore[possibly-missing-attribute]
                 print(
                     "Currently Running"
                     if any(

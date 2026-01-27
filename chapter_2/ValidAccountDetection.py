@@ -1,4 +1,4 @@
-import win32evtlog
+import win32evtlog  # ty:ignore[unresolved-import]
 
 server = "localhost"
 logtype = "Security"

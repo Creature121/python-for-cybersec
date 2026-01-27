@@ -1,6 +1,6 @@
 import win32con
-from win32api import GetLogicalDriveStrings
-from win32file import GetDriveType
+from win32api import GetLogicalDriveStrings  # ty:ignore[unresolved-import]
+from win32file import GetDriveType  # ty:ignore[unresolved-import]
 import os.path
 import psutil
 

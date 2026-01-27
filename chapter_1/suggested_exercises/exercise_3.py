@@ -50,7 +50,7 @@ def DNSRequest(domain):
                         domains[domain] = [address]
     except (
         dns.resolver.NXDOMAIN,
-        dns.exception.Timeout,
+        dns.exception.Timeout,  # ty:ignore[possibly-missing-attribute]
         dns.resolver.NoAnswer,
     ):  # Added dns.resolver.NoAnswer to deal with error
         return []
@@ -58,7 +58,7 @@ def DNSRequest(domain):
 
 
 def HostSearch(domain, dictionary, add_numbers):
-    successes = []  # unused variable??
+    successes = []  # unused variable??  # noqa: F841
     for word in dictionary:
         new_domain = f"{word}.{domain}"
         executor.submit(DNSRequest, new_domain)

@@ -1,4 +1,4 @@
-import win32evtlog
+import win32evtlog  # ty:ignore[unresolved-import]
 import xml.etree.ElementTree as ET
 import psutil
 import datetime
@@ -32,16 +32,19 @@ def ParseEvents(events):
         name = root.findall(f"{path}Commandline")[0].text
         pid = root.findall(f"{path}CreatedProcessId")[0].text
         print(f"Process {name} launched with PID {pid}")
-        if psutil.pid_exists(int(pid)):
-            print("It is currently running.")
-            print("Details:")
-            process = psutil.Process(int(pid))
-            print(
-                f"Creation Time: {datetime.datetime.fromtimestamp(process.create_time())}"
-            )  # Process's creation time
-            print(
-                f"Parent PID: {process.parent().pid}"
-            )  # Process's parent process's pid.
+        if pid:
+            if psutil.pid_exists(int(pid)):
+                print("It is currently running.")
+                print("Details:")
+                process = psutil.Process(int(pid))
+                print(
+                    f"Creation Time: {datetime.datetime.fromtimestamp(process.create_time())}"
+                )  # Process's creation time
+                print(
+                    f"Parent PID: {process.parent().pid}"
+                )  # Process's parent process's pid.
+        else:
+            print("Did not get a PID...")
 
 
 events = GetEventLogs()

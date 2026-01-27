@@ -1,4 +1,4 @@
-from scapy.all import IP, Ether, TCP, IPv6, sendp, sniff
+from scapy.all import IP, Ether, TCP, IPv6, sendp, sniff  # ty:ignore[unresolved-import]
 
 ip = "127.0.0.1"
 ports = [53, 80]

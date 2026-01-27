@@ -29,7 +29,7 @@ def ExtractSMTP(packet):
         elif connection_data in unmatched:
             print(f"{packet[IP].dst} SMTP Password: {decoded}")
             unmatched.remove(connection_data)
-    except Exception as e:
+    except Exception as _e:
         # print(f"Error in ExtractSMTP()\n{e}")
         return
 
@@ -41,7 +41,7 @@ awaiting_password = []
 def ExtractTelnet(packet):
     try:
         payload = packet[Raw].load.decode("utf-8").rstrip()
-    except Exception as e:
+    except Exception as _e:
         # print(f"Failed to extract payload.\n{e}")
         return
 

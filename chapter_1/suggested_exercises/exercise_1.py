@@ -1,4 +1,4 @@
-from scapy.all import sr, IP, TCP, UDP, DNS, DNSQR
+from scapy.all import sr, IP, TCP  # ty:ignore[unresolved-import]
 
 import ipaddress
 

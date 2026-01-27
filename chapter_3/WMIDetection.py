@@ -1,4 +1,4 @@
-import win32evtlog
+import win32evtlog  # ty:ignore[unresolved-import]
 import xml.etree.ElementTree as ET
 
 server = "localhost"
