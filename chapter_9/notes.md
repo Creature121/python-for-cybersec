@@ -13,9 +13,19 @@
                         - > If the value LocalAccountTokenFilterPolicy is set to 1, then full access to the administrative share (including Administrator-level privileges) is enabled.
             - [DetectSMB.py](DetectSMB.py)
     - Use Alternate Authentication Material
+        - > ...after an initial authentication, many systems use alternative authentication material to store the authenticated user’s session state.
+            - Examples:
+                - Hashes
+                - Kerberos Tickets
+                - Access Tokens
+                - Web Session Cookies
+        - [WebSessionCookieHijack.py](WebSessionCookieHijack.py)
+        - [CreateFakeCookie.py](CreateFakeCookie.py)
+        - [DetectDecoyCookies.py](DetectDecoyCookies.py)
 ---
 ---
 - Windows Administrative Shares
 - Dowloaded from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649):
     - [malicious.py](malicious.py)
     - [SMB.pcapng](SMB.pcapng)
+    - [decoyCookie.pcap](decoyCookie.pcap)
