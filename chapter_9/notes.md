@@ -1,0 +1,21 @@
+- Chapter 9 talks about the "Lateral Movement" phase of the MITRE ATT&CK framework.
+- It has 2 techniques:
+    - Remote Services
+        - > Windows network shares are designed to provide remote access to files on a system.
+            - Some shares exist by default...
+                - ...which can provide far-reaching access.
+            - Easiest way to defend them? Disable them.
+                - Otherwise, monitor network traffic for abuse.
+                    - Uses SMB protocol.
+            - [RemoteServices.py](RemoteServices.py)
+                - > However, by default, a local Administrator remotely accessing a file share will not have full Administrator-level access due to Windows User Access Controls (UAC) remote restrictions.
+                    - > A Windows registry value located at `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` manages these restrictions.
+                        - > If the value LocalAccountTokenFilterPolicy is set to 1, then full access to the administrative share (including Administrator-level privileges) is enabled.
+            - [DetectSMB.py](DetectSMB.py)
+    - Use Alternate Authentication Material
+---
+---
+- Windows Administrative Shares
+- Dowloaded from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649):
+    - [malicious.py](malicious.py)
+    - [SMB.pcapng](SMB.pcapng)
