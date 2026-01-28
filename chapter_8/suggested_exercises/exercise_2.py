@@ -27,9 +27,20 @@ def parseDocx(root, docs):
     for doc in docs:
         matches = None
         file_dir = os.path.join(root, doc)
+
         with ZipFile(file_dir, "r") as zip:
             data = zip.read("word/document.xml")
-            matches = findPII(data.decode("utf-8"))
+
+        try:
+            data = data.decode("utf-8")
+        except UnicodeDecodeError as _:
+            print(
+                "Failed to decode data (utf-8). Trying alternate encoding scheme (utf-16le)..."
+            )
+            data = data.decode("utf-16le")  # ty:ignore[possibly-missing-attribute]
+
+        matches = findPII(data)
+
         print("-")
         printMatches(file_dir, matches)
         print("-")
@@ -54,5 +65,5 @@ def findFiles(directory):
             parseText(root, [file for file in files if file.endswith(ext)])
 
 
-directory = os.path.join(os.getcwd(), "Documents")
+directory = os.path.join(os.getcwd(), "../Documents")
 findFiles(directory)

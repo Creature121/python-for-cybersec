@@ -52,6 +52,7 @@ dependencies = [
     "pydantic==1.8.2",
     "pyinstaller==4.5.1",
     "pyinstaller-hooks-contrib==2021.3",
+    "pymupdf>=1.26.5",
     "pynacl==1.4.0",
     "pyparsing==2.4.7",
     "pypsexec==0.2.0",

@@ -1,3 +1,4 @@
+# from icecream import ic
 import os
 import re
 from zipfile import ZipFile
@@ -5,7 +6,18 @@ from zipfile import ZipFile
 email_regex = "[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}"
 phone_regex = "[(]?[0-9]{3}[)]?-[0-9]{3}-[0-9]{4}"
 ssn_regex = "[0-9]{3}-[0-9]{2}-[0-9]{4}"
-regexes = [email_regex, phone_regex, ssn_regex]
+master_card_regex = "(5[1-5][0-9]{14}|2[2-7][0-9]{14})"
+visa_card_regex = "4[0-9]{12}(?:[0-9]{3})?"
+emirates_id_regex = "784-?[0-9]{4}-?[0-9]{7}-?[0-9]{1}"
+
+regexes = [
+    email_regex,
+    phone_regex,
+    ssn_regex,
+    master_card_regex,
+    visa_card_regex,
+    emirates_id_regex,
+]
 
 
 def findPII(data):
@@ -40,6 +52,7 @@ def parseText(root, txts):
         file_dir = os.path.join(root, txt)
         with open(file_dir, "r") as f:
             data = f.read()
+            # ic(data)
             matches = findPII(data)
         printMatches(file_dir, matches)
 
@@ -54,5 +67,5 @@ def findFiles(directory):
             parseText(root, [file for file in files if file.endswith(ext)])
 
 
-directory = os.path.join(os.getcwd(), "Documents")
+directory = os.path.join(os.getcwd(), "../Documents")
 findFiles(directory)

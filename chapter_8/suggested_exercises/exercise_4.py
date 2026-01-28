@@ -1,6 +1,7 @@
 import os
 import re
 from zipfile import ZipFile
+import pymupdf
 
 email_regex = "[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}"
 phone_regex = "[(]?[0-9]{3}[)]?-[0-9]{3}-[0-9]{4}"
@@ -35,6 +36,23 @@ def parseDocx(root, docs):
         print("-")
 
 
+def parsePDF(root, pdfs):
+    for pdf in pdfs:
+        matches = None
+        file_dir = os.path.join(root, pdf)
+        data = ""
+
+        with pymupdf.open(file_dir) as f:
+            for page in f:
+                data += page.get_text()
+
+        matches = findPII(data)
+
+        print("-")
+        printMatches(file_dir, matches)
+        print("-")
+
+
 def parseText(root, txts):
     for txt in txts:
         file_dir = os.path.join(root, txt)
@@ -50,9 +68,10 @@ txt_ext = [".txt", ".py", ".csv"]
 def findFiles(directory):
     for root, directories, files in os.walk(directory):
         parseDocx(root, [file for file in files if file.endswith(".docx")])
+        parsePDF(root, [file for file in files if file.endswith(".pdf")])
         for ext in txt_ext:
             parseText(root, [file for file in files if file.endswith(ext)])
 
 
-directory = os.path.join(os.getcwd(), "Documents")
+directory = os.path.join(os.getcwd(), "..\Documents")
 findFiles(directory)
