@@ -1,0 +1,14 @@
+- Chapter 10 discuses about the "Collection" phase of the MITRE ATT&CK framework.
+- 2 techniques are discussed:
+    - Clipboard Data
+        - The clipboard tends to collect sensitive data.
+            - An attacker can:
+                - Read, and gather valubale data.
+                - Modify, and further the attack.
+        - [ModifyClipboard.py](ModifyClipboard.py)
+        - > Detection of applications stealing sensitive information by reading it from the clipboard is infeasible.
+        - [MonitorClipboard.py](MonitorClipboard.py)
+            - > However, it is possible to monitor for malicious modifications to the clipboard.
+                - By having an allowlist, and notifying if unallowed process accessed the clipboard.
+        
+    - Email Collection
