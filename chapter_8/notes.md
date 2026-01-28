@@ -8,3 +8,12 @@
             - [DetectAdminLogin.py](DetectAdminLogin.py)
              
         - File and Directory Discovery
+            - Internal systems usually contain useful data to attackers
+                - which must first be discovered.
+            - [FileDiscovery.py](FileDiscovery.py)
+            - [MonitorDecoyContent.py](MonitorDecoyContent.py)
+            - [CreateDecoyContent.py](CreateDecoyContent.py)
+---
+---
+- Downloaded [test documents](Documents) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649) to use in [FileDiscovery.py](FileDiscovery.py).
+- Author really loves their honeypots.
