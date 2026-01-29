@@ -1,0 +1,13 @@
+- Chapter 11 talks about the "Command and Control" phase of the MITRE ATT&CK framework.
+- > Command-and-control channels provide these remote management capabilities over the network.
+- Covers 2 techniques:
+    - Encrypted Channel
+        - for this, both client and server must know (in bracket is what we are using in code samples):
+            - Server IP (localhost)
+            - Server Port (1337)
+            - Data Location (TCP packet payload)
+            - Encryption Algorithm (AES-CBC)
+            - Encryption Key (16 byte key)
+        - [EncryptedChannelClient.py](EncryptedChannelClient.py)
+        - [EncryptedChannelSever.py](EncryptedChannelSever.py)
+    - Protocol Tunneling
