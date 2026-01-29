@@ -1,0 +1,11 @@
+- Chapter 12 talks about the "Exfiltration" phase of the MITRE ATT&CK framework.
+- We will be covering 2 techniques:
+    - Exfiltration via Alternate Protocols
+        - > Performing data exfiltration over one of these alternative protocols can allow an attacker to evade detection by tools and defenders focused on “traditional” data transfer protocols.
+        - DNS is a good exfiltration protocol, because:
+            - it is commonly permitted
+            - > ...DNS requests are routed to a DNS server selected by a domain’s owner, ensuring that requests regarding an attacker- controlled domain go to an attacker-controlled server.
+        - [DNSExfiltrationClient.py](DNSExfiltrationClient.py)
+        - [DNSExfiltrationServer.py](DNSExfiltrationServer.py)
+        - [DetectAlternativeProtocol.py](DetectAlternativeProtocol.py)
+    - Exfiltration via Non-Application Layer Protocols
