@@ -1,18 +1,26 @@
+from pprint import pprint
 import glob
 import os
 from zipfile import ZipFile
 from sys import platform
+from tarfile import TarFile
 
-archive_files: list[str] = ["zip"]
+archive_files: list[str] = ["zip", "tar"]
 email_files: list[str] = ["pst", "ost"]
 
 
 def searchArchiveFile(file_name: str) -> bool:
     try:
-        for file in ZipFile(file_name, "r").namelist():
-            email = True in [file.endswith(ext) for ext in email_files]
-            if email:
-                return True
+        if file_name.endswith("zip"):
+            for file in ZipFile(file_name, "r").namelist():
+                email = True in [file.endswith(ext) for ext in email_files]
+                if email:
+                    return True
+        elif file_name.endswith("tar"):
+            for file in TarFile(file_name, "r").getnames():
+                email = True in [file.endswith(ext) for ext in email_files]
+                if email:
+                    return True
     except Exception as _:
         return False
     return False
@@ -40,4 +48,4 @@ def findFiles(extensions: list[str]) -> list[str]:
 
 
 extensions = email_files + archive_files
-print(findFiles(extensions))
+pprint(findFiles(extensions))
