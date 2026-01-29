@@ -12,3 +12,10 @@
                 - By having an allowlist, and notifying if unallowed process accessed the clipboard.
         
     - Email Collection
+        - > ...email clients often cache email data for offline use, making it available to an attacker...
+        - [LocalEmailFiles.py](LocalEmailFiles.py)
+        - [FindEmailArchives.py](FindEmailArchives.py)
+    ---
+    ---
+    - `libratom` library for parsing OST/PST files.
+    - Downloaded [sample.pst](sample.pst) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
