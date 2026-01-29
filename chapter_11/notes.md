@@ -10,4 +10,24 @@
             - Encryption Key (16 byte key)
         - [EncryptedChannelClient.py](EncryptedChannelClient.py)
         - [EncryptedChannelSever.py](EncryptedChannelSever.py)
+        - [DetectEncryptedTraffic.py](DetectEncryptedTraffic.py)
     - Protocol Tunneling
+        - If encrypted channels makes traffic unreadable, protocol tunneling make traffic difficult to detect.
+        - This tech is designed to sneak C2C traffic past network defenses.
+            - Conditions:
+                - a protocol permitted by coporate firewall
+                - a protocol common enough not to be suspicious
+                - HTTPS fulfills both these conditions.
+        - [ProtocolTunnellingClient.py](ProtocolTunnellingClient.py)
+        - [ProtocolTunnellingServer.py](ProtocolTunnellingServer.py)
+        - > By looking for Base64-encoded data where it shouldn’t be, it may be possible to detect protocol tunneling.
+            - [ProtocolDecoder.py](ProtocolDecoder.py)
+---
+---
+- You can identify potentially encrypted C2C traffic by calculating entropy?
+    - > With truly random data, there is a 1/256 probability that a byte has a particular value.
+        - > Since encrypted data is essentially random while unencrypted data is not, entropy can be used to identify potentially encrypted data within network traffic.
+            - i.e., if you see high entropy, it could be encrypted.
+- CozyCar malware
+    - Used HTTP headers to carry C2C data.
+- Downloaded [EncryptedChannel.pcapng](EncryptedChannel.pcapng) from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
