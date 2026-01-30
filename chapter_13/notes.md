@@ -1,0 +1,14 @@
+- Chapter 13 focuses on the "Impact" phase of the MITRE ATT&CK framework.
+    - > Some cyberattack campaigns will never reach this stage.
+        - > If the goal of an attack is gaining access to sensitive and valuable data,
+            - then that would have been covered in the previous phase.
+        - > ...some attacks are intended to cause damage to the target environment in some way.
+    - 2 techniques:
+        - Account Access Removal
+        - Data Encrypted for Impact
+            - Ransomwares / Wipers
+            - [DataEncryption.py](DataEncryption.py)
+            - [CheckFileEntropies.py](CheckFileEntropies.py)
+---
+---
+- Downloaed [Documents](Documents) folder from [the author's site](https://www.wiley.com/en-us/Python+for+Cybersecurity%3A+Using+Python+for+Cyber+Offense+and+Defense-p-9781119850649#downloadstab-section).
