@@ -9,3 +9,8 @@
         - [DNSExfiltrationServer.py](DNSExfiltrationServer.py)
         - [DetectAlternativeProtocol.py](DetectAlternativeProtocol.py)
     - Exfiltration via Non-Application Layer Protocols
+        - OSI Model
+        - [NonApplicationClient.py](NonApplicationClient.py)
+        - [NonApplicationServer.py](NonApplicationServer.py)
+        - Basically, ICMP can only be used for very low bandwidth data transmission, lest it causes excessive number of packets to form.
+        - [DetectNonApplicationProtocol.py](DetectNonApplicationProtocol.py)
