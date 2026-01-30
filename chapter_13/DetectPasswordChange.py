@@ -2,8 +2,10 @@ import datetime
 import platform
 import subprocess
 
+
 def QueryEventLog(eventID):
     import win32evtlog  # ty:ignore[unresolved-import]
+
     server = "localhost"
     logtype = "Security"
     flags = win32evtlog.EVENTLOG_FORWARDS_READ | win32evtlog.EVENTLOG_SEQUENTIAL_READ
@@ -19,11 +21,12 @@ def QueryEventLog(eventID):
     #                 logs.append(event)
     #     else:
     #         break
-    
+
     while events := win32evtlog.ReadEventLog(handle, flags, 0):
         logs.extend(event for event in events if event.EventID == eventID)
 
     return logs
+
 
 def checkWindowsPasswordChange():
     events = QueryEventLog(4724)
@@ -34,6 +37,7 @@ def checkWindowsPasswordChange():
 
         print(f"Password of {changed} changed by {changer} at {time}")
 
+
 def compareDates(date_1, date_2):
     date_1_parts = [int(part) for part in date_1.split("/")]
     date_2_parts = [int(part) for part in date_2.split("/")]
@@ -43,7 +47,10 @@ def compareDates(date_1, date_2):
 
     return d2 >= d1
 
+
 threshold = "01/01/2021"
+
+
 def checkLinuxPasswordChange():
     import pwd
     # import grp
@@ -54,7 +61,8 @@ def checkLinuxPasswordChange():
         date = results.split(" ")[2]
         if compareDates(threshold, date):
             print(f"Password of {user} changed on {date}")
-    
+
+
 if platform.system() == "Windows":
     checkWindowsPasswordChange()
 else:

