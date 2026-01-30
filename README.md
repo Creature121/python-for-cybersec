@@ -3,7 +3,7 @@ This repository contains the various notes and scripts I write based on the book
 > *by Howard E. Paston III*
 
 # Chapter Notes
-- [Introduction Notes](introduction/notes.md)
+- [Introduction Notes](chapter_00_introduction/notes.md)
 - [Chapter 01 Notes](chapter_01/notes.md)
 - [Chapter 02 Notes](chapter_02/notes.md)
 - [Chapter 03 Notes](chapter_03/notes.md)
