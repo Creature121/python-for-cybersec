@@ -5,6 +5,9 @@
         - > ...some attacks are intended to cause damage to the target environment in some way.
     - 2 techniques:
         - Account Access Removal
+            - [AccountAccessRemoval.py](AccountAccessRemoval.py)
+                - > ...a changed password can have the same effect as a deleted account but offers the option to reverse the change if needed.
+            - [DetectPasswordChange.py](DetectPasswordChange.py)
         - Data Encrypted for Impact
             - Ransomwares / Wipers
             - [DataEncryption.py](DataEncryption.py)

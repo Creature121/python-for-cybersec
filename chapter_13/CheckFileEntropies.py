@@ -12,7 +12,7 @@ def calcEntropy(data):
 def calcFileEntropy(file_name):
     with open(file_name, "rb") as f:
         b = list(f.read())
-    file_len = len(b)
+    # file_len = len(b)
     return calcEntropy(b)
 
 
